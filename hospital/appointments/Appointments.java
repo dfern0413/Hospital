@@ -1,19 +1,40 @@
 package appointments;
 
-public class Appointments {
-    int appointNum;
-    String reasonVisit;
-    String appointDate;
+import person.Doctor;
+import person.Patient;
 
-    public Appointments(int appointNum, String reasonVisit, String appointDate) {
-        this.appointNum = appointNum;
-        this.reasonVisit = reasonVisit;
-        this.appointDate = appointDate;
+public class Appointments {
+    String reasonAppointment;
+    Doctor doctorAssigned;
+    Patient patient;
+
+    public Appointments(String reasonAppointment, Doctor doctorAssigned, Patient patient) {
+        this.reasonAppointment = reasonAppointment;
+        this.doctorAssigned = doctorAssigned;
+        this.patient = patient;
     }
 
-        public String toString(){
-            return "Appointment number: " + appointNum
-                    + " Reason for Visit: " + reasonVisit
-                    + " Appointment Date: " + appointDate;
-        }
+    public String getReasonAppointment() {
+        return reasonAppointment;
+    }
+
+    public void setReasonAppointment(String reasonAppointment) {
+        this.reasonAppointment = reasonAppointment;
+    }
+
+    public Doctor getDoctorAssigned() {
+        return doctorAssigned;
+    }
+
+    public void setDoctorAssigned(Doctor doctorAssigned) {
+        this.doctorAssigned = doctorAssigned;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
 }
