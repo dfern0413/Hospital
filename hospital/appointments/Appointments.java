@@ -1,17 +1,21 @@
 package appointments;
 
-import person.Doctor;
-import person.Patient;
+import medicine.Case;
 
-public class Appointments {
-    String reasonAppointment;
-    Doctor doctorAssigned;
-    Patient patient;
+public abstract class Appointments {
+    static String reasonAppointment;
+    static String appointedDoctor;
+    static String appointmentPatient;
+    static Case caseAppointment;
 
-    public Appointments(String reasonAppointment, Doctor doctorAssigned, Patient patient) {
-        this.reasonAppointment = reasonAppointment;
-        this.doctorAssigned = doctorAssigned;
-        this.patient = patient;
+
+    public static void makeAppointment(Case caseAppointment){
+        reasonAppointment = caseAppointment.getPatientSymptoms().getSymptom();
+        appointedDoctor = caseAppointment.getAssignedDoctor().getFullName();
+        appointmentPatient = caseAppointment.getPatient().getFullName();
+
+        System.out.println(appointedDoctor + " Meeting " + appointmentPatient +
+                " July 27");
     }
 
     public String getReasonAppointment() {
@@ -22,19 +26,5 @@ public class Appointments {
         this.reasonAppointment = reasonAppointment;
     }
 
-    public Doctor getDoctorAssigned() {
-        return doctorAssigned;
-    }
 
-    public void setDoctorAssigned(Doctor doctorAssigned) {
-        this.doctorAssigned = doctorAssigned;
-    }
-
-    public Patient getPatient() {
-        return patient;
-    }
-
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
 }

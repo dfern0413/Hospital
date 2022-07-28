@@ -20,7 +20,7 @@ public class Prescription {
                     prescription + " " + medicineAmount + "\n" + "To Patient: " + casePrescribed.getPatient().getFullName());
         } else if (casePrescribed.getPatientSymptoms().getSymptom() == "Broken hand") {
             prescription = "Put hand in a cast";
-            medicineAmount = 0;
+            medicineAmount = 1;
             System.out.println(casePrescribed.getAssignedDoctor().getFullName() + " prescribes: " +
                     prescription + " " + medicineAmount + "\n" + "To Patient: " + casePrescribed.getPatient().getFullName());
 
@@ -33,6 +33,8 @@ public class Prescription {
 
 
     }
+
+
 }
 
 
