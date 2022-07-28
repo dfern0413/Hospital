@@ -9,7 +9,7 @@ public abstract class Appointments {
     static Case caseAppointment;
 
 
-    public static void makeAppointment(Case caseAppointment){
+    public static void makeAppointment(Case caseAppointment) {
         reasonAppointment = caseAppointment.getPatientSymptoms().getSymptom();
         appointedDoctor = caseAppointment.getAssignedDoctor().getFullName();
         appointmentPatient = caseAppointment.getPatient().getFullName();

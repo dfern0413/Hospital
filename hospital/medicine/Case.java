@@ -7,8 +7,8 @@ import prescription.Prescription;
 import java.util.Objects;
 
 public final class Case {
-    int caseNum ;
-    Symptoms patientSymptoms ;
+    int caseNum;
+    Symptoms patientSymptoms;
     Doctor assignedDoctor;
     Patient patient;
 
@@ -18,7 +18,6 @@ public final class Case {
         this.assignedDoctor = assignedDoctor;
         this.patient = patient;
     }
-
 
 
     public int getCaseNum() {
