@@ -1,6 +1,6 @@
 package person;
 
-public class Doctor extends Person {
+final public class Doctor extends Person {
     String specialty;
 
     public Doctor(int age, String fullName, String specialty){

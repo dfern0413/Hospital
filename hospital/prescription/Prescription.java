@@ -1,30 +1,41 @@
 package prescription;
 
 import medicine.Case;
-import person.Doctor;
-import person.Patient;
+import supplies.Supplies;
 
-public abstract class Prescription {
+
+public abstract class Prescription{
 
     static String prescription;
-    static Case casePrescribed;
 
 
-    public static void prescribe(Case casePrescribed) {
+    public static void prescribe(Case casePrescribed, Supplies suppliesUsedDuring) {
 
         casePrescribed.diagnose();
-        if (casePrescribed.doctorDiagnose == "Common Cold") {
-            prescription = "Pain Relief pills";
-            System.out.println(prescription);
-        } else if (casePrescribed.doctorDiagnose == "Dislocated Shoulder") {
-            prescription = "1 week rest and therapy";
-            System.out.println(prescription);
-        } else if (casePrescribed.doctorDiagnose == "Mild Burn") {
-            prescription = "Ointment";
-            System.out.println(prescription);
-        } else {
-            prescription = "N/A";
-            System.out.println(prescription);
+        switch (casePrescribed.doctorDiagnose) {
+            case "Common Cold":
+                prescription = "Pain Relief pills";
+                suppliesUsedDuring.glovesUsed();
+                suppliesUsedDuring.syringeUsed();
+                System.out.println(prescription);
+                break;
+            case "Dislocated Shoulder":
+                prescription = "1 week rest and therapy";
+                suppliesUsedDuring.bandageUsed();
+                suppliesUsedDuring.glovesAdded();
+                System.out.println(prescription);
+                break;
+            case "Mild Burn":
+                prescription = "Ointment";
+                suppliesUsedDuring.bandageUsed();
+                suppliesUsedDuring.glovesUsed();
+                suppliesUsedDuring.syringeUsed();
+                System.out.println(prescription);
+                break;
+            default:
+                prescription = "N/A";
+                System.out.println(prescription);
+                break;
         }
 
 

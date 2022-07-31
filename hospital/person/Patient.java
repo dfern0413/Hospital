@@ -2,7 +2,7 @@ package person;
 
 import java.util.Objects;
 
-public class Patient extends Person {
+final public class Patient extends Person {
     int patientNum;
 
 
