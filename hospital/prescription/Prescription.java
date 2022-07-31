@@ -4,31 +4,27 @@ import medicine.Case;
 import person.Doctor;
 import person.Patient;
 
-public class Prescription {
+public abstract class Prescription {
 
     static String prescription;
-    static int medicineAmount;
     static Case casePrescribed;
 
 
     public static void prescribe(Case casePrescribed) {
 
-        if (casePrescribed.getPatientSymptoms().getSymptom() == "Headache") {
+        casePrescribed.diagnose();
+        if (casePrescribed.doctorDiagnose == "Common Cold") {
             prescription = "Pain Relief pills";
-            medicineAmount = 3;
-            System.out.println(casePrescribed.getAssignedDoctor().getFullName() + " prescribes: " +
-                    prescription + " " + medicineAmount + "\n" + "To Patient: " + casePrescribed.getPatient().getFullName());
-        } else if (casePrescribed.getPatientSymptoms().getSymptom() == "Broken hand") {
-            prescription = "Put hand in a cast";
-            medicineAmount = 1;
-            System.out.println(casePrescribed.getAssignedDoctor().getFullName() + " prescribes: " +
-                    prescription + " " + medicineAmount + "\n" + "To Patient: " + casePrescribed.getPatient().getFullName());
-
+            System.out.println(prescription);
+        } else if (casePrescribed.doctorDiagnose == "Dislocated Shoulder") {
+            prescription = "1 week rest and therapy";
+            System.out.println(prescription);
+        } else if (casePrescribed.doctorDiagnose == "Mild Burn") {
+            prescription = "Ointment";
+            System.out.println(prescription);
         } else {
             prescription = "N/A";
-            medicineAmount = 0;
-            System.out.println(casePrescribed.getAssignedDoctor().getFullName() + "prescribes: " +
-                    prescription + " " + medicineAmount + "\n" + "To Patient: " + casePrescribed.getPatient().getFullName());
+            System.out.println(prescription);
         }
 
 

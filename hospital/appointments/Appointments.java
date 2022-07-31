@@ -10,9 +10,9 @@ public abstract class Appointments {
 
 
     public static void makeAppointment(Case caseAppointment) {
-        reasonAppointment = caseAppointment.getPatientSymptoms().getSymptom();
-        appointedDoctor = caseAppointment.getAssignedDoctor().getFullName();
-        appointmentPatient = caseAppointment.getPatient().getFullName();
+        reasonAppointment = caseAppointment.patientSymptoms;
+        appointedDoctor = caseAppointment.assignedDoctor;
+        appointmentPatient = caseAppointment.patientName;
 
         System.out.println(appointedDoctor + " Meeting " + appointmentPatient +
                 " July 27");

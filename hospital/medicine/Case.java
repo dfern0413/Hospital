@@ -6,62 +6,31 @@ import prescription.Prescription;
 
 import java.util.Objects;
 
-public final class Case {
+public class Case {
     int caseNum;
-    Symptoms patientSymptoms;
-    Doctor assignedDoctor;
-    Patient patient;
+    public String patientSymptoms;
+    public String assignedDoctor;
+    public String patientName;
+    public String doctorDiagnose;
 
-    public Case(int caseNum, Symptoms patientSymptoms, Doctor assignedDoctor, Patient patient) {
+    public Case(int caseNum, String patientSymptoms, String assignedDoctor, String patientName) {
         this.caseNum = caseNum;
         this.patientSymptoms = patientSymptoms;
         this.assignedDoctor = assignedDoctor;
-        this.patient = patient;
+        this.patientName = patientName;
+    }
+
+    public void diagnose(){
+        if(patientSymptoms == "Mild Fever"){
+            doctorDiagnose = "Common Cold";
+        } else if (patientSymptoms == "Pain in Shoulder") {
+            doctorDiagnose = "Dislocated Shoulder";
+        } else if (patientSymptoms == "Mild Skin Burn") {
+            doctorDiagnose = "Mild Burn";
+        } else {
+            doctorDiagnose = "N/A";
+        }
     }
 
 
-    public int getCaseNum() {
-        return caseNum;
-    }
-
-    public void setCaseNum(int caseNum) {
-        this.caseNum = caseNum;
-    }
-
-    public Symptoms getPatientSymptoms() {
-        return patientSymptoms;
-    }
-
-    public void setPatientSymptoms(Symptoms patientSymptoms) {
-        this.patientSymptoms = patientSymptoms;
-    }
-
-    public Doctor getAssignedDoctor() {
-        return assignedDoctor;
-    }
-
-    public void setAssignedDoctor(Doctor assignedDoctor) {
-        this.assignedDoctor = assignedDoctor;
-    }
-
-    public Patient getPatient() {
-        return patient;
-    }
-
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Case aCase = (Case) o;
-        return caseNum == aCase.caseNum && Objects.equals(patientSymptoms, aCase.patientSymptoms) && Objects.equals(assignedDoctor, aCase.assignedDoctor) && Objects.equals(patient, aCase.patient);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(caseNum, patientSymptoms, assignedDoctor, patient);
-    }
 }
