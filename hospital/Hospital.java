@@ -1,5 +1,4 @@
-import capacity.PatientAmount;
-import capacity.VisitantsAmount;
+import capacity.Capacity;
 import medicine.Case;
 import prescription.Prescription;
 import supplies.Supplies;
@@ -21,13 +20,10 @@ public class Hospital {
 
         Supplies.showInventory();
 
-        PatientAmount pAmount = new PatientAmount(6);
-        pAmount.entry();
-
-        VisitantsAmount vAmount = new VisitantsAmount(15);
-        vAmount.exit();
-        vAmount.exit();
-
+       Capacity capacity1 = new Capacity(25, 40, 30);
+       capacity1.docExit();
+       capacity1.patientEntry();
+       capacity1.visitorEntry();
 
 
     }

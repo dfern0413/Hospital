@@ -8,7 +8,6 @@ public abstract class Prescription{
 
     static String prescription;
 
-
     public static void prescribe(Case casePrescribed, Supplies suppliesUsedDuring) {
 
         casePrescribed.diagnose();
@@ -37,11 +36,7 @@ public abstract class Prescription{
                 System.out.println(prescription);
                 break;
         }
-
-
     }
-
-
 }
 
 

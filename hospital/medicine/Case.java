@@ -1,6 +1,6 @@
 package medicine;
 
-public class Case {
+public final class Case {
     int caseNum;
     public String patientSymptoms;
     public String assignedDoctor;
