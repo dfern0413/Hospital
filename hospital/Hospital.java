@@ -1,10 +1,12 @@
 import capacity.Capacity;
+import exceptions.ExceedCapacityException;
+import exceptions.NegativeValueException;
 import medicine.Case;
 import prescription.Prescription;
 import supplies.Supplies;
 
 public class Hospital {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NegativeValueException, ExceedCapacityException {
         Supplies.showInventory();
 
         Case case1 = new Case(1, "Mild Fever", "Robert Paul", "Julian");
@@ -20,11 +22,11 @@ public class Hospital {
 
         Supplies.showInventory();
 
-       Capacity capacity1 = new Capacity(25, 40, 30);
-       capacity1.docExit();
-       capacity1.patientEntry();
-       capacity1.visitorEntry();
-
+       Capacity capacity1 = new Capacity(2, 119, 247);
+       capacity1.visitorExit();
+       capacity1.visitorExit();
+       capacity1.docEntry();
+       capacity1.visitorExit();
 
     }
 }
