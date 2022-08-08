@@ -3,7 +3,7 @@ package supplies;
 
 import exceptions.NegativeValueException;
 
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class Supplies implements ISupplyUsage {
     static int bandages = 150;
@@ -19,7 +19,7 @@ public class Supplies implements ISupplyUsage {
 
     public static void ValidateSupplies() throws NegativeValueException {
         if(bandages < 10 | syringes < 10 | gloves < 10){
-            logger.warning("Supplies Running Low");
+            logger.info("Supplies Running Low");
             if (bandages < 0 | syringes < 0 | gloves < 0) {
                 throw new NegativeValueException("Supplies Cannot be negative");
             }

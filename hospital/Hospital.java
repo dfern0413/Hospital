@@ -4,6 +4,7 @@ import exceptions.NegativeValueException;
 import medicine.Case;
 import prescription.Prescription;
 import supplies.Supplies;
+import org.apache.log4j.Logger;
 
 public class Hospital {
     public static void main(String[] args) throws NegativeValueException, ExceedCapacityException {
@@ -23,7 +24,7 @@ public class Hospital {
 
         Supplies.showInventory();
 
-       Capacity capacity1 = new Capacity(2, 119, 247);
+       Capacity capacity1 = new Capacity(-1, 119, 247);
        capacity1.visitorExit();
        capacity1.visitorExit();
 

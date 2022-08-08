@@ -3,10 +3,13 @@ package capacity;
 import exceptions.ExceedCapacityException;
 import exceptions.NegativeValueException;
 
+import org.apache.log4j.Logger;
+
 public class Capacity implements ICapacityFlow{
     static int patientAmount;
     static int staffAmount;
     static int visitorAmount;
+    private static final Logger LOGGER = Logger.getLogger("Personal Capacity");
 
     public Capacity(int visitorAmount, int staffAmount, int patientAmount){
         try {
@@ -15,7 +18,7 @@ public class Capacity implements ICapacityFlow{
             Capacity.patientAmount = patientAmount;
             ValidateCapacity(Capacity.patientAmount,Capacity.staffAmount, Capacity.visitorAmount);
         }catch (Exception e){
-            System.out.println("Problem: " +e);
+            LOGGER.fatal("Problem: " + e);
         }
     }
 
