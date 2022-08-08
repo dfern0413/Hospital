@@ -1,22 +1,29 @@
 package medicine;
 
-import java.util.logging.Logger;
+import appointments.Appointments;
+import exceptions.InvalidNameException;
+import org.apache.log4j.Logger;
 
 public final class Case {
     int caseNum;
-    public String patientSymptoms;
-    public String assignedDoctor;
-    public String patientName;
+    public static String patientSymptoms;
+    public static String assignedDoctor;
+    public static String patientName;
     public String doctorDiagnose;
 
-    private static final Logger logger = Logger.getLogger("CaseLog");
+    private static final Logger LOGGER = Logger.getLogger("Case Log");
 
     public Case(int caseNum, String patientSymptoms, String assignedDoctor, String patientName) {
-        this.caseNum = caseNum;
-        this.patientSymptoms = patientSymptoms;
-        this.assignedDoctor = assignedDoctor;
-        this.patientName = patientName;
-        logger.info("Case Created");
+        try {
+            this.caseNum = caseNum;
+            Case.patientSymptoms = patientSymptoms;
+            Case.assignedDoctor = assignedDoctor;
+            Case.patientName = patientName;
+            validateCase();
+            Appointments.makeAppointment();
+        }catch (Exception e){
+            LOGGER.fatal(e);
+        }
     }
 
     public void diagnose(){
@@ -33,6 +40,14 @@ public final class Case {
             default:
                 doctorDiagnose = "N/A";
                 break;
+        }
+    }
+
+    public void validateCase() throws InvalidNameException{
+        if((Case.patientName == null || Case.patientName.equals("")) | (
+                Case.assignedDoctor == null || Case.assignedDoctor.equals("")
+                )){
+            throw new InvalidNameException("Names Cannot be blank");
         }
     }
 

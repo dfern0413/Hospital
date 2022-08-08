@@ -1,2 +1,8 @@
 2022-08-08 16:38:56 FATAL Personal Capacity:21 - Problem: exceptions.NegativeValueException: Cannot have less than 0
+  2022-08-08 17:05:05 INFO  Case Log:19 -  Meeting Julian Mon Aug 08 17:05:05 EDT 2022
+  2022-08-08 17:05:38 INFO  Case Log:19 - Peter James Meeting Julian Mon Aug 08 17:05:38 EDT 2022
+  2022-08-08 17:11:25 INFO  Case Log:19 -  Meeting Julian Mon Aug 08 17:11:25 EDT 2022
+  2022-08-08 17:11:25 FATAL Case Log:25 - exceptions.InvalidNameException: Names Cannot be blank
+  2022-08-08 17:12:46 FATAL Case Log:25 - exceptions.InvalidNameException: Names Cannot be blank
+  2022-08-08 17:33:24 INFO  Case Log:19 - Patrick James Meeting Julian Mon Aug 08 17:33:24 EDT 2022
   
