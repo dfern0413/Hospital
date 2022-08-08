@@ -1,15 +1,17 @@
 package supplies;
 
+import exceptions.NegativeValueException;
+
 public interface ISupplyUsage {
-    void syringeUsed();
+    void syringeUsed() throws NegativeValueException;
 
-    void bandageUsed();
+    void bandageUsed() throws NegativeValueException;
 
-    void glovesUsed();
+    void glovesUsed() throws NegativeValueException;
 
-    void syringeAdded();
+    void syringeAdded() throws NegativeValueException;
 
-    void bandageAdded();
+    void bandageAdded() throws NegativeValueException;
 
-    void glovesAdded();
+    void glovesAdded() throws NegativeValueException;
 }

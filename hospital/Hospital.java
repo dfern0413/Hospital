@@ -9,13 +9,14 @@ public class Hospital {
     public static void main(String[] args) throws NegativeValueException, ExceedCapacityException {
         Supplies.showInventory();
 
-        Case case1 = new Case(1, "Mild Fever", "Robert Paul", "Julian");
+        Case case1 = new Case(1, "Mild Fever", "", "Julian");
         Supplies supplies1 = new Supplies();
 
         case1.diagnose();
         Prescription.prescribe(case1, supplies1);
 
         Supplies.showInventory();
+        Supplies.setBandages(3);
 
         supplies1.syringeAdded();
         supplies1.bandageAdded();
@@ -24,8 +25,6 @@ public class Hospital {
 
        Capacity capacity1 = new Capacity(2, 119, 247);
        capacity1.visitorExit();
-       capacity1.visitorExit();
-       capacity1.docEntry();
        capacity1.visitorExit();
 
     }

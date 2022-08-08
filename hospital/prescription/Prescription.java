@@ -1,5 +1,6 @@
 package prescription;
 
+import exceptions.NegativeValueException;
 import medicine.Case;
 import supplies.Supplies;
 
@@ -8,7 +9,7 @@ public abstract class Prescription{
 
     static String prescription;
 
-    public static void prescribe(Case casePrescribed, Supplies suppliesUsedDuring) {
+    public static void prescribe(Case casePrescribed, Supplies suppliesUsedDuring) throws NegativeValueException {
 
         casePrescribed.diagnose();
         switch (casePrescribed.doctorDiagnose) {
