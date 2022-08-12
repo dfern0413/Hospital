@@ -20,7 +20,6 @@ public final class Case {
             Case.assignedDoctor = assignedDoctor;
             Case.patientName = patientName;
             validateCase();
-            Appointments.makeAppointment();
         }catch (Exception e){
             LOGGER.fatal(e);
         }

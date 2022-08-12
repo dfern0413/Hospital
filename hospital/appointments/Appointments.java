@@ -1,5 +1,6 @@
 package appointments;
 
+import generics.list;
 import medicine.Case;
 
 import java.util.Date;
@@ -8,15 +9,17 @@ import org.apache.log4j.Logger;
 public abstract class Appointments implements IAppointments{
     static String reasonAppointment;
     static String appointedDoctor;
-    static String appointmentPatient;
+    static String patientName;
     private static final Logger LOGGER = Logger.getLogger("Case Log");
 
-    public static void makeAppointment() {
-        reasonAppointment = Case.patientSymptoms;
-        appointedDoctor = Case.assignedDoctor;
-        appointmentPatient = Case.patientName;
+    static list<String> patientList = new list<>();
+
+    public static void makeAppointment(String patientName, String reasonAppointment, Case case1) {
+        Appointments.reasonAppointment = reasonAppointment;
+        Appointments.patientName = patientName;
+        patientList.add(patientName);
         Date currentDate = new Date();
-        LOGGER.info(appointedDoctor + " Meeting " + appointmentPatient +
+        LOGGER.info(appointedDoctor + " Meeting " +
                 " " + currentDate);
     }
 
